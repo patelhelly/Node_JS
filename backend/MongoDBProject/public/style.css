@@ -1,0 +1,76 @@
+.title_box{
+    border: 1px solid black;
+    padding: 20px ;
+    display: inline-block;
+    margin: 200px 510px;
+}
+a{
+    color: cornflowerblue;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 600;
+    font-style: italic;
+}
+.newChatbtn_cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.newChat_btn{
+    padding: 10px;
+}
+.body_box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+.chat_box{
+    display: inline-block;
+    background-color: aliceblue;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    width: 45%;
+}
+.msg_box{
+    background-color: dodgerblue;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-left: 15px;
+    p{
+        margin: 5px 0px;
+    }
+}
+.from{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+}
+.to{
+    font-style: italic;
+    text-align: right;
+}
+.date{
+    text-align: right;
+    font-size: 12px;
+}
+.newchat_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.newChat_form_from{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.editdel_btn{
+    display: flex;
+    gap: 1rem;
+}

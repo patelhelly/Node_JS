@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form method="post" action="/posts/<%= post.id %>/edit?_method=PATCH" class="newpostform">
+        <input 
+            placeholder="enter username" 
+            name="username" 
+            class="usernamefield"
+            disabled
+            value="<%= post.username %>"/>
+        <textarea rows="4" placeholder="write your post" name="content" class="contentfield" >
+            <%= post.content %>
+        </textarea>
+        <button class="submitnewform">Submit post</button>
+    </form>
+</body>
+</html>

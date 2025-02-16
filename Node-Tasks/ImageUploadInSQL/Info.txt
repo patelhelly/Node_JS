@@ -1,0 +1,63 @@
+ --> multer is a middleware for handling multipart/form-data, which is primarily used for uploading files.
+
+ --> multer is used to create an instance of diskStorage, which specifies where to store the uploaded files 
+    and how to name them.
+    --> const storage = multer.diskStorage({destination,filname})
+    --> To get full control over the storage of files like the name and destination you need to use the disk
+         storage engine.
+    -->DiskStorage is a method made available by multer where we configure the destination of the file, 
+        the name of the file and we can also add validations regarding the type of the file.
+        
+--> The upload instance is created by passing the storage object as an option.
+    --> const upload = multer({storage: storage})
+
+    --> const upload = multer({ dest: 'uploads/' })
+    -->If the dest property is not specified then the files are saved in the memory but never written to the 
+        disk. Now we will change our POST route to support the storage of files with the help of multer. 
+
+--> The upload.single('file') middleware is used to handle a single file upload with the name attribute of 
+    file in the HTML form. 
+    --> To handle multiple files, use upload.array. For a single file, use upload.single.
+    --> Note that the file argument depends on the name of the input specified in formData.
+    -->  Multer will save the value of text inputs in a body object and the file in the file object.
+
+--> Other Options in Multer:
+    -> limits: const upload = multer({
+                    storage: storage,
+                    limits : {fileSize : 1000000} // fileSize in bytes
+                });
+    -> fileFilter: function fileFilter (req, file, cb) {  
+                    //  callback function has a boolean passed to decide whether to keep the file or not.
+
+                        // To reject this file pass `false`:   
+                        cb(null, false);
+                        // To accept the file pass `true`:   
+                        cb(null, true);   
+                        // Create error if something goes wrong:   
+                        cb(new Error('Unhandled Error!')); 
+                    }
+                    function fileFilter(req, file, cb) {
+                        const type = file.mimetype.split("/")[0];
+                        // Check if the type of file is an image.
+                        if (type === "image") {
+                            return cb(null, true);
+                        } else {
+                            cb("Error: Only Images!");
+                        }
+                    }
+    -> Error Handling: app.post('/upload', function (req, res) {
+                            upload(req, res, function (err) {
+                              if (err instanceof multer.MulterError) {
+                                // A Multer error occurred when uploading.
+                              } else if (err) {
+                                // An unknown error occurred when uploading.
+                              }
+                              // If no error occurs.
+                            })
+                       })
+--> Uploading multiple files ->upload.array(fieldname,maxcount)
+    --> upload.fields
+    --> upload.none() can be used to not allow upload of files.
+    --> upload.any() can be used to accept files of all types and sizes.
+
+

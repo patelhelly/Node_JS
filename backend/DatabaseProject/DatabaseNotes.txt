@@ -1,0 +1,13 @@
+Faker - to generate fake data
+
+MySQL2 package : to connect node with MySQL: npm i mysql2
+
+using sql from cli:
+-> PS C:\Users\HELLY PATEL> cd "C:\Program Files\MySQL\MySQL Server 8.0\bin" 
+-> ./mysql -u root -p
+
+way to use sql: 
+1> sql workbench
+2> mysql2 package
+3> cli
+4> schema.sql file -> cli :- source C:\Users\HELLY PATEL\Desktop\NODE JS\backend\DatabaseProject\schema.sql

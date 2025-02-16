@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        <!-- Dice gave number : <%= Math.floor(Math.random() * 6 + 1) %> -->
+        Dice gave number : <%= diceValue %>
+        <% if(diceValue == 6) { %>
+            <h4>Nice !! Roll Dice Again</h4>
+        <% } %>
+    </h3>
+</body>
+</html>

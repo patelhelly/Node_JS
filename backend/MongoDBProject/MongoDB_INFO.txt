@@ -1,0 +1,64 @@
+// Mongodb shell //
+-> mongosh (in cmd)
+
+//JSON and BSON
+-> JSON : JavaScript Object Notation, is a human-readable data interchange format.
+        : Data Support: String, Boolean, Number, Array, Object, null
+-> BSON : Binary JSON
+        : Data Support: String, Boolean, Number (Integer, Float, Long, Decimal128...), Array, null, Date, BinData
+
+//Document and Collection //
+Document: Mongo store data in form of documents(BSON docs).
+-> {
+    field1: value1,
+    field2: value2,
+    field3: value3,
+    ...
+    fieldN: valueN
+   }
+Collection : It stores documents in Collections
+
+--> use college -> this will select or create a new database
+--> show dbs -> gives list of databases
+--> show collections -> gives list of tables in current database
+--> db -> show current database
+--> db.collection_name.insertOne({ ....})
+--> db.collection_name.insertMany({ ....}, { ....})
+--> db.collection_name.find() ->show all documents in current collection_name
+--> db.collection_name.find({key:value}) -> returns which satisfies condition
+    -> return cursor(reference to original)
+--> db.collection_name.findOne({key:value}) -> returns only 1st documnet which satisfies condition
+    -> return actual document
+
+//Query and Projection Operators
+-> https://www.mongodb.com/docs/manual/reference/operator/query/
+
+--> db.collection_name.updateOne(<filter/condition>,<update>,<options>)
+--> db.collection_name.updateMany()
+--> db.collection.replaceOne(filter, replacement, options) 
+        -> db.student.replaceOne( {name:'ABC'}, {name:'XYZ',marks:90,city:'Mumbai'})
+-->{
+    _id: ObjectId('665057820c76af5e9bcdcdf6'),
+    name: 'adam',
+    performance :{marks: 90,grade :'A'}
+  }
+  -->db.student.findOne({"performance.marks":90})
+
+//delete one
+-->db.collection_name.deleteOne(filter)
+//delete many
+-->db.collection_name.deleteMany({key:value})
+-->db.collection_name.deleteMany({}) -> delete all documents in current collection
+-->db.dropDatabase() -> delete database
+
+// Mongoose //
+-> a library to establish connection betn Mongodb and nodejs
+-> it is an object data modeling library
+-> npm i mongoose
+
+-schema : define shape of documents within collection
+-models : is a class which we construct documents
+
+---> Mongoose uses operational buffering
+---> Mongoose let you start using your models immediately, without waiting for mongoose to establish
+    a connection to mongodb

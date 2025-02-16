@@ -1,0 +1,18 @@
+REST - representational state transfer
+it is architectrual style that define set of constrains to be used for creating web services.
+
+CRUD -
+GET - retrive resources
+POST - submit new data to server
+PUT - update existing data
+PATCH - update existing data partially
+DELETE - remove data
+
+Creating RESTful APIs
+GET -> /posts -> to get data for all posts -> INDEX(main)
+POST -> /posts -> to add new post -> CREATE
+GET -> /posts/:id -> to get one post (using id) -> VIEW
+PATCH -> /posts/:id -> to update specific post -> UPDATE
+DELETE -> /posts/:id -> to delete specific post -> DESTROY
+
+Creating id : UUID package : universally unique identifier

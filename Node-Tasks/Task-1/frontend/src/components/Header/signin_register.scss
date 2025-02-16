@@ -1,0 +1,15 @@
+.signincontainer{
+    display: flex;
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    min-height: 100vh; 
+}
+
+form {
+    width: 400px;             
+    padding: 20px;            
+    border: 1px solid #ccc;   
+    border-radius: 10px;     
+    background-color: #fff;   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }

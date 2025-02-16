@@ -1,0 +1,30 @@
+h1{
+    color: maroon;
+}
+.post{
+    background-color: blanchedalmond;
+}
+.user{
+    font-style: italic;
+}
+.mainlinks{
+    display: flex;
+    gap: 3rem;
+}
+.newpostform{
+    padding: 80px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+.usernamefield{
+    padding: 6px;
+    width: 30%;
+}
+.contentfield{
+    width: 30%;
+}
+.submitnewform{
+    padding: 5px;
+}
